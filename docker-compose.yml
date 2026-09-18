@@ -1,0 +1,26 @@
+services:
+  # Service de la base de donnees MongoDB
+  mongodb:
+    image: mongo:6.0
+    container_name: conteneur_mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  # Service de l'application Flask
+  web:
+    build: ./flask_mongo_app
+    container_name: conteneur_web_flask
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/testdb
+    depends_on:
+      - mongodb
+
+volumes:
+  # Volume persistant pour conserver les donnees de MongoDB
+  mongo_data:
