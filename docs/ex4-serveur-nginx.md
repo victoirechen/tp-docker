@@ -23,7 +23,7 @@ PS C:\Users\victo\Desktop\tp_docker> docker ps
 CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                     NAMES
 35d3879e649d   nginx     "/docker-entrypoint.…"   19 seconds ago   Up 17 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   mon_nginx
 
-![img.png](img.png)
+![img.png](ex4.png)
 
 PS C:\Users\victo\Desktop\tp_docker> docker stop mon_nginx
 mon_nginx
